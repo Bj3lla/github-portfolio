@@ -1,1 +1,1 @@
-Hi! This is my GitHub Portfolio, enjoy!! :D
+Hi! I'm building my GitHub portfolio, it's not done yet tho!
