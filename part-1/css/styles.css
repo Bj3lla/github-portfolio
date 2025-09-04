@@ -1,0 +1,286 @@
+/* Import Raleway font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #5a5c5d;    /* dark gray */
+    --accent-color: #706f6f;     /* medium gray */
+    --bg-color: #fafafa;          /* very light gray */
+    --bg-color2: #f0efe9;        /* off-white */
+    --section-spacing: 2.5rem;  /* spacing between sections */
+    --max-width: 900px;         /* content width */
+}
+
+/* Body: column layout so header, content, footer stack vertically */
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+
+  /* layout fix */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content area grows to push footer to the bottom on short pages */
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1; /* take remaining space */
+}
+
+/* Headings */
+h1, h2, h3, h5 {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3rem;
+    margin-top: var(--section-spacing);
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+h5 {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    padding-top: 2.5rem;  
+}
+
+/* Paragraphs & lists */
+p {
+    margin: 0.5rem 0;
+}
+
+ul {
+    margin: 0.5rem 0 1rem 1.2rem;
+}
+
+li {
+    margin-bottom: 0.3rem;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-color);
+    transition: color 0.2s ease, border 0.2s ease;
+}
+
+a:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+/* Image styling */
+img {
+    display: block;
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 1rem auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Sections */
+section {
+    margin-bottom: var(--section-spacing);
+}
+
+/* Contact info style (if added later) */
+.contact-info {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+footer p {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+header {
+    background-color: var(--bg-color2);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;  /* center the links */
+    gap: 2rem;                /* spacing between items */
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline; /* ensure no bullets */
+    padding-inline: 5rem;
+}
+
+nav a {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* Education grid: 2 columns on wide screens, 1 column on small screens */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 2rem;                               /* space between the two cards */
+  align-items: start;
+  margin-top: 0.5rem;
+}
+
+/* Card styling for each degree */
+.edu-card {
+  padding: 1rem;
+  min-width: 0;            /* helps prevent overflow with long text */
+  background: transparent; /* keep it minimalistic */
+  border-radius: 6px;
+}
+
+/* Year / small meta above the title */
+.edu-year {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Headings inside the card */
+.edu-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.edu-card h4 {
+  margin: 0.2rem 0 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Make lists inside the cards look tidy */
+.edu-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.45;
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 800px) {
+  .education-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+  .edu-card {
+    padding: 0.75rem 0;
+  }
+}
+
+/* Education grid: 2 columns on wide screens, 1 column on small screens */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 2rem;                               /* space between the two cards */
+  align-items: start;
+  margin-top: 0.5rem;
+}
+
+/* Card styling for each degree */
+.exp-card {
+  padding: 1rem;
+  min-width: 0;            /* helps prevent overflow with long text */
+  background: transparent; /* keep it minimalistic */
+  border-radius: 6px;
+}
+
+/* Year / small meta above the title */
+.exp-year {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Headings inside the card */
+.exp-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.exp-card h4 {
+  margin: 0.2rem 0 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Make lists inside the cards look tidy */
+.exp-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.45;
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 800px) {
+  .experience-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+  .exp-card {
+    padding: 0.75rem 0;
+  }
+}
