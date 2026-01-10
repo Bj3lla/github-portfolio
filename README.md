@@ -1,1 +1,1 @@
-Hi! I'm building my GitHub portfolio, it's not done yet tho!
+Hi! This is my official CV and portfolio. To visit page, click [here)](https://bj3lla.github.io/github-portfolio/) :)
